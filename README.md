@@ -16,7 +16,7 @@ version of the form `0.x.0`, differs in some respects from the instructions belo
    Among the files containing the version number that must be updated to `0.x.y` are:
     * [Cargo.toml](https://github.com/Qiskit/qiskit-terra/blob/main/Cargo.toml)
     * [qiskit/docs/conf.py](https://github.com/Qiskit/qiskit-terra/blob/main/docs/conf.py)
-    * [qiskit/VERSION.txt](https://github.com/Qiskit/qiskit-terra/blob/main/VERSION.txt)
+    * [qiskit/VERSION.txt](https://github.com/Qiskit/qiskit-terra/blob/main/qiskit/VERSION.txt)
     * [qiskit/setup.py](https://github.com/Qiskit/qiskit-terra/blob/main/setup.py)
 
    [Here’s an example of such a PR](https://github.com/Qiskit/qiskit-terra/pull/9193)
