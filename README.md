@@ -14,10 +14,10 @@ version of the form `0.x.0`, differs in some respects from the instructions belo
    in the release notes for this patch, and adds a release note that has a “prelude” section with a
    sentence explaining the release.
    Among the files containing the version number that must be updated to `0.x.y` are:
-    * [Cargo.toml](https://github.com/Qiskit/qiskit-terra/Cargo.toml)
-    * [qiskit/docs/conf.py](https://github.com/Qiskit/qiskit-terra/qiskit/docs/conf.py)
-    * [qiskit/VERSION.txt](https://github.com/Qiskit/qiskit-terra/qiskit/VERSION.txt)
-    * [qiskit/setup.py](https://github.com/Qiskit/qiskit-terra/qiskit/setup.py)
+    * [Cargo.toml](https://github.com/Qiskit/qiskit-terra/blob/main/Cargo.toml)
+    * [qiskit/docs/conf.py](https://github.com/Qiskit/qiskit-terra/blob/main/qiskit/docs/conf.py)
+    * [qiskit/VERSION.txt](https://github.com/Qiskit/qiskit-terra/blob/main/qiskit/VERSION.txt)
+    * [qiskit/setup.py](https://github.com/Qiskit/qiskit-terra/blob/main/qiskit/setup.py)
 
    [Here’s an example of such a PR](https://github.com/Qiskit/qiskit-terra/pull/9193)
    
