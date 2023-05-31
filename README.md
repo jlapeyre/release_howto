@@ -1,8 +1,8 @@
 ### How to prepare a Qiskit Release
 
-We will show how prepare patch release `0.x.y` of Qiskit.
-Concrete examples of patch release versions are `0.21.3` and `0.123.456`.
-The procedure for making a point release, that is one with version of the form `0.x.0` differs in some respects from the instructions below.
+We will show how prepare patch release `0.x.y` of Qiskit.  Concrete examples of patch release
+versions are `0.21.3` and `0.123.456`.  The procedure for making a point release, that is one with
+version of the form `0.x.0`, differs in some respects from the instructions below.
 
 1. Since we preparing a release, the milestone should have been created on github some
  time ago. Open [milestone `0.x.y`](https://github.com/Qiskit/qiskit-terra/milestones)
