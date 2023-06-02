@@ -1,8 +1,10 @@
-### How to prepare a Qiskit Release
+## How to prepare a qiskit-terra patch release
 
-We will show how prepare patch release `0.x.y` of Qiskit.  Concrete examples of patch release
-versions are `0.21.3` and `0.123.456`.  The procedure for making a point release, that is one with
-version of the form `0.x.0`, differs in some respects from the instructions below.
+### Releasing the qiskit-terra package
+
+We will show how prepare patch release `0.x.y` of Qiskit (qiskit-terra).  Concrete examples of patch
+release versions are `0.21.3` and `0.123.456`.  The procedure for making a point release, that is
+one with version of the form `0.x.0`, differs in some respects from the instructions below.
 
 1. Since we preparing a release, the milestone should have been created on github some
  time ago. Open [milestone `0.x.y`](https://github.com/Qiskit/qiskit-terra/milestones)
@@ -46,7 +48,11 @@ version of the form `0.x.0`, differs in some respects from the instructions belo
 At this point, the CD pipelines and `qiskit-bot` take over (look in the “Actions” tab, and follow
 the links to Azure to see), and will handle building and deploying all the (many) wheels to PyPI.
 It will also generate a “release” on GitHub, and populate it based on the “Changelog: X” labels on
-all the PRs merged since the last release.  `qiskit-bot` will also open a PR on the metapackage repo
+all the PRs merged since the last release.
+
+### Releasing the Qiskit metapackage
+
+When releasing qiskit-terra, `qiskit-bot` will also open a PR on the metapackage repo
 ([see an example here](https://github.com/Qiskit/qiskit/pull/1640)) to bump the version information
 there.  It will immediately fail CI, and can’t pass until the wheels are deployed to PyPI - don’t
 worry about it.  We have to do things a bit more manually here, because we haven’t automated these
@@ -91,4 +97,6 @@ At this point we’re essentially done - everything will wing its way through CD
 in the “Actions” tab of the metapackage.  Matthew and I like to post in #qiskit-dev to let people
 know that we’ve released a new version.
 
-13. Close the milestone associated with the release.
+### Finish
+
+1. Close the milestone associated with the release.
