@@ -9,22 +9,32 @@ version of the form `0.x.0`, differs in some respects from the instructions belo
  and check that all PRs have been merged or are scheduled for merging. The latter means
  adding to the merge queue, or tagging for mergify, or using whatever the current system is.
 
-2. A branch `stable/0.x` should have been created for the point release.  Prepare a PR to this
-   branch that does three things: bumps the version numbers to `0.x.y`, fixes any typos/broken links
-   in the release notes for this patch, and adds a release note that has a “prelude” section with a
-   sentence explaining the release.
-   Among the files containing the version number that must be updated to `0.x.y` are:
+2. A branch `stable/0.x` should already have been created for the point release. Prepare a PR to this
+   branch (on a branch called `prepare-stable.0.x.y` for example) that does three things:
+   1. Bumps the qiskit-terra version number to `0.x.y` in several files
+   2. fixes any typos/broken links in the release notes for this patch
+   3. Adds a release note that has a “prelude” section with a sentence explaining the release.
+
+   It's a good idea to squash all commits into a single commit so that your PR differs from `stable/0.x`  by one commit.
+   Somewhat meaningful summaries of the squashed commits, say one line each, would be useful.
+
+   Among the files containing the version number that must be updated to `0.x.y` are the following.
+   You should grep or ask someone if you have not recently (or ever) made a release, because this list is likely to
+   change.
     * [Cargo.toml](https://github.com/Qiskit/qiskit-terra/blob/main/Cargo.toml)
+    * [crates/accelerate/Cargo.toml](https://github.com/Qiskit/qiskit-terra/blob/main/crates/accelerate/Cargo.toml)
+    * [crates/qasm2/Cargo.toml](https://github.com/Qiskit/qiskit-terra/blob/main/crates/qasm2/Cargo.toml)
     * [qiskit/docs/conf.py](https://github.com/Qiskit/qiskit-terra/blob/main/docs/conf.py)
     * [qiskit/VERSION.txt](https://github.com/Qiskit/qiskit-terra/blob/main/qiskit/VERSION.txt)
     * [qiskit/setup.py](https://github.com/Qiskit/qiskit-terra/blob/main/setup.py)
+    * [Cargo.lock](https://github.com/Qiskit/qiskit-terra/blob/main/Cargo.lock). *Note* this must not be updated manually,
+      but rather by running `cargo build`.
 
    [Here’s an example of such a PR](https://github.com/Qiskit/qiskit-terra/pull/9193)
-   
 
 3. Regular review process to help spot typos in this PR, then we merge it.
 
-4. The release manager (you) now tags the commit of this PR, with:
+4. The release manager (you) now tags the commit of this merged PR, with:
 
     * tag name `0.x.y`
     * tag message just says “Qiskit Terra 0.x.y"
@@ -42,7 +52,7 @@ there.  It will immediately fail CI, and can’t pass until the wheels are deplo
 worry about it.  We have to do things a bit more manually here, because we haven’t automated these
 bits:
 
-1. Clone [the metapackage repo](https://github.com/Qiskit/qiskit) locally, if you haven’t already.
+1. Clone [the metapackage repo](https://github.com/Qiskit/qiskit-metapackage) locally, if you haven’t already.
    If you have write access on it you don’t need to fork it in GitHub, but if not then you’ll need
    to to make a PR
 
