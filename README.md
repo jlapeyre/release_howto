@@ -87,6 +87,8 @@ bits:
 
 12. make a release on GitHub for the metapackage (look at the previous ones as examples)
 
-At this point we’re done - everything will wing its way through CD again.  You can see the progress
+At this point we’re essentially done - everything will wing its way through CD again.  You can see the progress
 in the “Actions” tab of the metapackage.  Matthew and I like to post in #qiskit-dev to let people
 know that we’ve released a new version.
+
+13. Close the milestone associated with the release.
